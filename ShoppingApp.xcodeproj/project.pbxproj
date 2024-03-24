@@ -18,6 +18,15 @@
 		A26EFF2D2BB00D6500E8E749 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A26EFF2C2BB00D6500E8E749 /* Gilroy-SemiBold.ttf */; };
 		A26EFF352BB00FD200E8E749 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF342BB00FD200E8E749 /* WelcomeView.swift */; };
 		A26EFF382BB0113C00E8E749 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26EFF372BB0113C00E8E749 /* Launch Screen.storyboard */; };
+		A26EFF3A2BB01A3500E8E749 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF392BB01A3500E8E749 /* UIExtension.swift */; };
+		A26EFF3C2BB0219700E8E749 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF3B2BB0219700E8E749 /* RoundButton.swift */; };
+		A26EFF3E2BB0233A00E8E749 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF3D2BB0233A00E8E749 /* SignInView.swift */; };
+		A26EFF402BB02BB800E8E749 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF3F2BB02BB800E8E749 /* LoginView.swift */; };
+		A26EFF422BB031FC00E8E749 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF412BB031FC00E8E749 /* MainViewModel.swift */; };
+		A26EFF442BB033AE00E8E749 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF432BB033AE00E8E749 /* LineTextField.swift */; };
+		A26EFF472BB046A400E8E749 /* ServiceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF462BB046A400E8E749 /* ServiceCall.swift */; };
+		A26EFF492BB0670000E8E749 /* Globs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF482BB0670000E8E749 /* Globs.swift */; };
+		A26EFF4C2BB06CE000E8E749 /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26EFF4B2BB06CE000E8E749 /* UIKitExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,15 @@
 		A26EFF2E2BB00DF800E8E749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A26EFF342BB00FD200E8E749 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A26EFF372BB0113C00E8E749 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A26EFF392BB01A3500E8E749 /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
+		A26EFF3B2BB0219700E8E749 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		A26EFF3D2BB0233A00E8E749 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		A26EFF3F2BB02BB800E8E749 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A26EFF412BB031FC00E8E749 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A26EFF432BB033AE00E8E749 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		A26EFF462BB046A400E8E749 /* ServiceCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCall.swift; sourceTree = "<group>"; };
+		A26EFF482BB0670000E8E749 /* Globs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globs.swift; sourceTree = "<group>"; };
+		A26EFF4B2BB06CE000E8E749 /* UIKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +121,7 @@
 		A26EFEFC2BB00BDC00E8E749 /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				A26EFF4A2BB06CA200E8E749 /* Common */,
 				A26EFF332BB00F9000E8E749 /* UICommon */,
 				A26EFF322BB00F5600E8E749 /* ViewModel */,
 				A26EFF2F2BB00F0D00E8E749 /* Model */,
@@ -164,6 +183,8 @@
 			children = (
 				A26EFF362BB00FF600E8E749 /* Login */,
 				A26EFF342BB00FD200E8E749 /* WelcomeView.swift */,
+				A26EFF3D2BB0233A00E8E749 /* SignInView.swift */,
+				A26EFF3F2BB02BB800E8E749 /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,6 +192,7 @@
 		A26EFF322BB00F5600E8E749 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A26EFF412BB031FC00E8E749 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +200,11 @@
 		A26EFF332BB00F9000E8E749 /* UICommon */ = {
 			isa = PBXGroup;
 			children = (
+				A26EFF392BB01A3500E8E749 /* UIExtension.swift */,
+				A26EFF3B2BB0219700E8E749 /* RoundButton.swift */,
+				A26EFF432BB033AE00E8E749 /* LineTextField.swift */,
+				A26EFF462BB046A400E8E749 /* ServiceCall.swift */,
+				A26EFF482BB0670000E8E749 /* Globs.swift */,
 			);
 			path = UICommon;
 			sourceTree = "<group>";
@@ -187,6 +214,14 @@
 			children = (
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		A26EFF4A2BB06CA200E8E749 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A26EFF4B2BB06CE000E8E749 /* UIKitExtension.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,8 +358,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26EFF422BB031FC00E8E749 /* MainViewModel.swift in Sources */,
+				A26EFF402BB02BB800E8E749 /* LoginView.swift in Sources */,
+				A26EFF3C2BB0219700E8E749 /* RoundButton.swift in Sources */,
+				A26EFF472BB046A400E8E749 /* ServiceCall.swift in Sources */,
 				A26EFEFE2BB00BDC00E8E749 /* ShoppingAppApp.swift in Sources */,
+				A26EFF3E2BB0233A00E8E749 /* SignInView.swift in Sources */,
+				A26EFF3A2BB01A3500E8E749 /* UIExtension.swift in Sources */,
+				A26EFF492BB0670000E8E749 /* Globs.swift in Sources */,
 				A26EFF352BB00FD200E8E749 /* WelcomeView.swift in Sources */,
+				A26EFF4C2BB06CE000E8E749 /* UIKitExtension.swift in Sources */,
+				A26EFF442BB033AE00E8E749 /* LineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
