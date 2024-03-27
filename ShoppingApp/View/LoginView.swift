@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var loginVM = MainViewModel.shared;
     
     
@@ -64,9 +64,11 @@ struct LoginView: View {
                 }
                 .padding(.bottom, .screenWidth * 0.05)
                 
-                
+                NavigationLink {
+                    SignUpView()
+                } label: {
                     HStack{
-                        Text("Don’t have an account?")
+                        Text("Alredy have an account?")
                             .font(.customfont(.semibold, fontSize: 14))
                             .foregroundColor(.primaryText)
                         
@@ -74,8 +76,8 @@ struct LoginView: View {
                             .font(.customfont(.semibold, fontSize: 14))
                             .foregroundColor(.primaryApp)
                     }
-            
-                
+                }
+           
                 Spacer()
             }
             .padding(.top, .topInsets + 64)
