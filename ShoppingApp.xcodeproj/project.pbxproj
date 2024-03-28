@@ -17,6 +17,16 @@
 		A26EFF2D2BB00D6500E8E749 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A26EFF2C2BB00D6500E8E749 /* Gilroy-SemiBold.ttf */; };
 		A26EFF382BB0113C00E8E749 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A26EFF372BB0113C00E8E749 /* Launch Screen.storyboard */; };
 		A2C4DED92BB604B800D12451 /* ShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DED82BB604B800D12451 /* ShoppingApp.swift */; };
+		A2C4DEDE2BB6073600D12451 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEDD2BB6073600D12451 /* SignUpView.swift */; };
+		A2C4DEE02BB6074600D12451 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEDF2BB6074600D12451 /* SignUpViewModel.swift */; };
+		A2C4DEE32BB607D800D12451 /* Globs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEE22BB607D800D12451 /* Globs.swift */; };
+		A2C4DEE52BB6080100D12451 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEE42BB6080100D12451 /* LineTextField.swift */; };
+		A2C4DEE72BB6080900D12451 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEE62BB6080900D12451 /* RoundButton.swift */; };
+		A2C4DEE92BB6082600D12451 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEE82BB6082600D12451 /* SignInView.swift */; };
+		A2C4DEEB2BB6083F00D12451 /* ServiceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEEA2BB6083F00D12451 /* ServiceCall.swift */; };
+		A2C4DEED2BB6095C00D12451 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEEC2BB6095C00D12451 /* UIExtension.swift */; };
+		A2C4DEEF2BB6174000D12451 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEEE2BB6174000D12451 /* UserModel.swift */; };
+		A2C4DEF12BB61B6E00D12451 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEF02BB61B6E00D12451 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +61,16 @@
 		A26EFF2E2BB00DF800E8E749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A26EFF372BB0113C00E8E749 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A2C4DED82BB604B800D12451 /* ShoppingApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingApp.swift; path = font/ShoppingApp.swift; sourceTree = "<group>"; };
+		A2C4DEDD2BB6073600D12451 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A2C4DEDF2BB6074600D12451 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A2C4DEE22BB607D800D12451 /* Globs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globs.swift; sourceTree = "<group>"; };
+		A2C4DEE42BB6080100D12451 /* LineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		A2C4DEE62BB6080900D12451 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		A2C4DEE82BB6082600D12451 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		A2C4DEEA2BB6083F00D12451 /* ServiceCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCall.swift; sourceTree = "<group>"; };
+		A2C4DEEC2BB6095C00D12451 /* UIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
+		A2C4DEEE2BB6174000D12451 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A2C4DEF02BB61B6E00D12451 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +121,10 @@
 		A26EFEFC2BB00BDC00E8E749 /* ShoppingApp */ = {
 			isa = PBXGroup;
 			children = (
+				A2C4DEE12BB607BB00D12451 /* UICommon */,
+				A2C4DEDC2BB606FE00D12451 /* ViewModel */,
+				A2C4DEDB2BB606F300D12451 /* model */,
+				A2C4DEDA2BB6066F00D12451 /* view */,
 				A26EFF2E2BB00DF800E8E749 /* Info.plist */,
 				A26EFF272BB00D0400E8E749 /* font */,
 				A26EFF012BB00BDE00E8E749 /* Assets.xcassets */,
@@ -144,6 +168,44 @@
 				A26EFF282BB00D4300E8E749 /* Gilroy-Bold.otf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		A2C4DEDA2BB6066F00D12451 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A2C4DEF02BB61B6E00D12451 /* WelcomeView.swift */,
+				A2C4DEDD2BB6073600D12451 /* SignUpView.swift */,
+				A2C4DEE82BB6082600D12451 /* SignInView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A2C4DEDB2BB606F300D12451 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A2C4DEEE2BB6174000D12451 /* UserModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A2C4DEDC2BB606FE00D12451 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2C4DEDF2BB6074600D12451 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A2C4DEE12BB607BB00D12451 /* UICommon */ = {
+			isa = PBXGroup;
+			children = (
+				A2C4DEEC2BB6095C00D12451 /* UIExtension.swift */,
+				A2C4DEE62BB6080900D12451 /* RoundButton.swift */,
+				A2C4DEE42BB6080100D12451 /* LineTextField.swift */,
+				A2C4DEE22BB607D800D12451 /* Globs.swift */,
+				A2C4DEEA2BB6083F00D12451 /* ServiceCall.swift */,
+			);
+			path = UICommon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +342,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C4DEE72BB6080900D12451 /* RoundButton.swift in Sources */,
+				A2C4DEEB2BB6083F00D12451 /* ServiceCall.swift in Sources */,
+				A2C4DEE92BB6082600D12451 /* SignInView.swift in Sources */,
+				A2C4DEDE2BB6073600D12451 /* SignUpView.swift in Sources */,
+				A2C4DEED2BB6095C00D12451 /* UIExtension.swift in Sources */,
+				A2C4DEE32BB607D800D12451 /* Globs.swift in Sources */,
+				A2C4DEF12BB61B6E00D12451 /* WelcomeView.swift in Sources */,
+				A2C4DEE02BB6074600D12451 /* SignUpViewModel.swift in Sources */,
 				A2C4DED92BB604B800D12451 /* ShoppingApp.swift in Sources */,
+				A2C4DEEF2BB6174000D12451 /* UserModel.swift in Sources */,
+				A2C4DEE52BB6080100D12451 /* LineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

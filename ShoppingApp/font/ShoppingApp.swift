@@ -13,6 +13,7 @@ struct ShoppingApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
+                WelcomeView()
             }
         }
     }
