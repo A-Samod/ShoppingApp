@@ -15,7 +15,7 @@ class ProductsViewModel: ObservableObject {
     }
     
     func fetchProducts() {
-        guard let url = URL(string: "http://localhost:4000/product/items") else { return }
+        guard let url = URL(string: "https://shoppingapp-backend-ww3a.onrender.com/product/items") else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {

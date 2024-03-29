@@ -15,14 +15,13 @@ struct ShoppingApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                
-//                if mainVM.isUserLogin==true{
-//                   HomeView()
-//                }
-//                else if mainVM.isUserLogin==false{
-//                   WelcomeView()
-//                }
-                HomeView()
+                if mainVM.isUserLogin==true{
+                   HomeView()
+                }
+                else if mainVM.isUserLogin==false{
+                   WelcomeView()
+                }
+               // HomeView()
             }
         }
     }
