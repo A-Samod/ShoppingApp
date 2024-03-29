@@ -12,19 +12,20 @@ struct WelcomeView: View {
         ZStack{
             Image("welcome_bg")
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .frame(width: .screenWidth, height: .screenHeight)
             
             VStack{
                 Spacer()
                 
-                Text("Welcome\nto our store")
-                    .font(.customfont( .semibold, fontSize: 48))
-                    .foregroundColor(.black)
+                Text("WELCOME\n TO\n FUTURE FASHION")
+                    .font(.largeTitle)
+                    .fontWeight(.black)
+                    .padding()
                     .multilineTextAlignment(.center)
                 
                 NavigationLink {
-                    LoginView()
+                    SignInView()
                 } label: {
                     RoundButton(title: "Get Started") {
                     }

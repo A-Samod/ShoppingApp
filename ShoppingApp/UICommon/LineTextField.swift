@@ -20,7 +20,7 @@ struct LineTextField: View {
                 .foregroundColor(.textTitle)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             
-           
+            
             TextField(placholder, text: $txt)
                 .keyboardType(keyboardType)
                 .autocapitalization(.none)
@@ -52,13 +52,13 @@ struct LineSecureField: View {
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                     .modifier( ShowButton(isShow: $isShowPassword))
-                    
+                
                     .frame(height:40)
             }else{
                 SecureField(placholder, text: $txt)
                     .autocapitalization(.none)
-                     .modifier( ShowButton(isShow: $isShowPassword))
-                     .frame(height:40)
+                    .modifier( ShowButton(isShow: $isShowPassword))
+                    .frame(height:40)
                 
             }
             Divider()

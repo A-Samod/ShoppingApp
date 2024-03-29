@@ -7,34 +7,29 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct SignInView: View {
     
-   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @StateObject var loginVM = MainViewModel.shared;
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @StateObject var loginVM = SignUpViewModel.shared;
     
     
     var body: some View {
         ZStack {
-            Image("bottom_bg")
+            Image("")
                 .resizable()
                 .scaledToFill()
                 .frame(width: .screenWidth, height: .screenHeight)
             
             
             VStack{
-                
-                Image("color_logo")
+                Image("home_logo_cropped")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 40)
-                    .padding(.bottom, .screenWidth * 0.1)
-                
-                
-                Text("Loging")
-                    .font(.customfont(.semibold, fontSize: 26))
-                    .foregroundColor(.primaryText)
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 4)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text("Sign In")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
                 
                 Text("Enter your emails and password")
                     .font(.customfont(.semibold, fontSize: 16))
@@ -42,10 +37,10 @@ struct LoginView: View {
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, .screenWidth * 0.1)
                 
-                LineTextField( title: "Email", placholder: "Enter your email address", txt: $loginVM.txtEmail, keyboardType: .emailAddress)
+                LineTextField( title: "Email", placholder: "Enter your email address", txt: $loginVM.email, keyboardType: .emailAddress)
                     .padding(.bottom, .screenWidth * 0.07)
                 
-                LineSecureField( title: "Password", placholder: "Enter your password", txt: $loginVM.txtPassword, isShowPassword: $loginVM.isShowPassword)
+                LineSecureField( title: "Password", placholder: "Enter your password", txt: $loginVM.password, isShowPassword: $loginVM.isShowPassword)
                     .padding(.bottom, .screenWidth * 0.02)
                 
                 Button {
@@ -74,38 +69,15 @@ struct LoginView: View {
                         
                         Text("Signup")
                             .font(.customfont(.semibold, fontSize: 14))
-                            .foregroundColor(.primaryApp)
+                            .foregroundColor(.blue)
                     }
                 }
-           
+                
                 Spacer()
             }
             .padding(.top, .topInsets + 64)
             .padding(.horizontal, 20)
             .padding(.bottom, .bottomInsets)
-            
-            
-            VStack {
-                
-                HStack {
-                    Button {
-                        mode.wrappedValue.dismiss()
-                    } label: {
-                        Image("back")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                    }
-                    
-                    Spacer()
-                    
-                }
-                
-                Spacer()
-                
-            }
-            .padding(.top, .topInsets)
-            .padding(.horizontal, 20)
             
             
             
@@ -126,9 +98,8 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         
         NavigationView {
-            LoginView()
+            SignInView()
         }
         
     }
 }
-
