@@ -50,17 +50,17 @@ struct SignUpView: View {
                             
                             Text("Terms of Service")
                                 .font(.customfont(.medium, fontSize: 14))
-                                .foregroundColor(.primaryApp)
+                                .foregroundColor(.blue)
                             
                             
                             Text(" and ")
                                 .font(.customfont(.medium, fontSize: 14))
-                                .foregroundColor(.secondaryText)
+                                .foregroundColor(.blue)
                             
                             
                             Text("Privacy Policy.")
                                 .font(.customfont(.medium, fontSize: 14))
-                                .foregroundColor(.primaryApp)
+                                .foregroundColor(.blue)
                                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             
                         }
@@ -70,6 +70,8 @@ struct SignUpView: View {
                     
                     RoundButton(title: "Sign Up") {
                         mainVM.serviceCallSignUp()
+                        print("Clicked ..")
+//                        mainVM.resetFields()
                     }
                     .padding(.bottom, .screenWidth * 0.05)
                     
@@ -84,7 +86,7 @@ struct SignUpView: View {
                             
                             Text("Sign In")
                                 .font(.customfont(.semibold, fontSize: 14))
-                                .foregroundColor(.primaryApp)
+                                .foregroundColor(.blue)
                         }
                     }
                     

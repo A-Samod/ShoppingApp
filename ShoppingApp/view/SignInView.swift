@@ -15,19 +15,17 @@ struct SignInView: View {
     
     var body: some View {
         ZStack {
-            Image("bottom_bg")
+            Image("")
                 .resizable()
                 .scaledToFill()
                 .frame(width: .screenWidth, height: .screenHeight)
             
             
             VStack{
-                
-                Image("")
+                Image("home_logo_cropped")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 40)
-                    .padding(.bottom, .screenWidth * 0.1)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Text("Sign In")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -71,7 +69,7 @@ struct SignInView: View {
                         
                         Text("Signup")
                             .font(.customfont(.semibold, fontSize: 14))
-                            .foregroundColor(.primaryApp)
+                            .foregroundColor(.blue)
                     }
                 }
                 
