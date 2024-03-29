@@ -23,11 +23,11 @@ struct SignInView: View {
             
             VStack{
                 
-                //                Image("")
-                //                    .resizable()
-                //                    .scaledToFit()
-                //                    .frame(width: 40)
-                //                    .padding(.bottom, .screenWidth * 0.1)
+                Image("")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40)
+                    .padding(.bottom, .screenWidth * 0.1)
                 Text("Sign In")
                     .font(.largeTitle)
                     .fontWeight(.bold)

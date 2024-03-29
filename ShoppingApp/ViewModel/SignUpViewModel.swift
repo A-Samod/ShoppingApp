@@ -19,6 +19,7 @@ class SignUpViewModel: ObservableObject {
     @Published var errorMessage : String = ""
     @Published var isShowPassword: Bool = false
     @Published var isUserLogin: Bool = false
+    @Published var isUserSignUp: Bool = false
     
     //MARK: ServiceCall
     func serviceCallLogin(){
@@ -86,10 +87,8 @@ class SignUpViewModel: ObservableObject {
                 if let status = response["status"] as? Int, status == 200 {
                     self.errorMessage = response["message"] as? String ?? "Success"
                     self.showError = true
-                }
-                if let status = response["status"] as? Int, status == 404 {
-                    self.errorMessage = response["message"] as? String ?? "Invalid username or password"
-                    self.showError = true
+                    
+                    self.isUserSignUp = true
                 }
                 else {
                     self.errorMessage = response["message"] as? String ?? "Fail"

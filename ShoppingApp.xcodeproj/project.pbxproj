@@ -27,6 +27,15 @@
 		A2C4DEED2BB6095C00D12451 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEEC2BB6095C00D12451 /* UIExtension.swift */; };
 		A2C4DEEF2BB6174000D12451 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEEE2BB6174000D12451 /* UserModel.swift */; };
 		A2C4DEF12BB61B6E00D12451 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEF02BB61B6E00D12451 /* WelcomeView.swift */; };
+		A2C4DEF32BB6314E00D12451 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEF22BB6314E00D12451 /* HomeView.swift */; };
+		A2C4DEF62BB6320000D12451 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A2C4DEF52BB6320000D12451 /* SDWebImageSwiftUI */; };
+		A2C4DEF82BB6321B00D12451 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEF72BB6321B00D12451 /* SearchView.swift */; };
+		A2C4DEFA2BB6327800D12451 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEF92BB6327800D12451 /* ProductsViewModel.swift */; };
+		A2C4DEFC2BB6328F00D12451 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEFB2BB6328F00D12451 /* ProductModel.swift */; };
+		A2C4DEFE2BB661DC00D12451 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEFD2BB661DC00D12451 /* ProductDetailView.swift */; };
+		A2C4DF002BB662E800D12451 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEFF2BB662E800D12451 /* CartView.swift */; };
+		A2C4DF022BB6633600D12451 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DF012BB6633600D12451 /* CartModel.swift */; };
+		A2C4DF042BB6639E00D12451 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DF032BB6639E00D12451 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +80,14 @@
 		A2C4DEEC2BB6095C00D12451 /* UIExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		A2C4DEEE2BB6174000D12451 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A2C4DEF02BB61B6E00D12451 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		A2C4DEF22BB6314E00D12451 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A2C4DEF72BB6321B00D12451 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		A2C4DEF92BB6327800D12451 /* ProductsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
+		A2C4DEFB2BB6328F00D12451 /* ProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		A2C4DEFD2BB661DC00D12451 /* ProductDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		A2C4DEFF2BB662E800D12451 /* CartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		A2C4DF012BB6633600D12451 /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		A2C4DF032BB6639E00D12451 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C4DEF62BB6320000D12451 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +191,11 @@
 		A2C4DEDA2BB6066F00D12451 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A2C4DEFF2BB662E800D12451 /* CartView.swift */,
+				A2C4DEFD2BB661DC00D12451 /* ProductDetailView.swift */,
+				A2C4DEF72BB6321B00D12451 /* SearchView.swift */,
+				A2C4DF032BB6639E00D12451 /* ProfileView.swift */,
+				A2C4DEF22BB6314E00D12451 /* HomeView.swift */,
 				A2C4DEF02BB61B6E00D12451 /* WelcomeView.swift */,
 				A2C4DEDD2BB6073600D12451 /* SignUpView.swift */,
 				A2C4DEE82BB6082600D12451 /* SignInView.swift */,
@@ -183,6 +206,8 @@
 		A2C4DEDB2BB606F300D12451 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				A2C4DF012BB6633600D12451 /* CartModel.swift */,
+				A2C4DEFB2BB6328F00D12451 /* ProductModel.swift */,
 				A2C4DEEE2BB6174000D12451 /* UserModel.swift */,
 			);
 			path = model;
@@ -192,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C4DEDF2BB6074600D12451 /* SignUpViewModel.swift */,
+				A2C4DEF92BB6327800D12451 /* ProductsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -224,6 +250,9 @@
 			dependencies = (
 			);
 			name = ShoppingApp;
+			packageProductDependencies = (
+				A2C4DEF52BB6320000D12451 /* SDWebImageSwiftUI */,
+			);
 			productName = ShoppingApp;
 			productReference = A26EFEFA2BB00BDC00E8E749 /* ShoppingApp.app */;
 			productType = "com.apple.product-type.application";
@@ -296,6 +325,9 @@
 				Base,
 			);
 			mainGroup = A26EFEF12BB00BDC00E8E749;
+			packageReferences = (
+				A2C4DEF42BB631C700D12451 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = A26EFEFB2BB00BDC00E8E749 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,14 +375,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C4DEE72BB6080900D12451 /* RoundButton.swift in Sources */,
+				A2C4DEFE2BB661DC00D12451 /* ProductDetailView.swift in Sources */,
 				A2C4DEEB2BB6083F00D12451 /* ServiceCall.swift in Sources */,
+				A2C4DF002BB662E800D12451 /* CartView.swift in Sources */,
+				A2C4DEFA2BB6327800D12451 /* ProductsViewModel.swift in Sources */,
 				A2C4DEE92BB6082600D12451 /* SignInView.swift in Sources */,
+				A2C4DEFC2BB6328F00D12451 /* ProductModel.swift in Sources */,
 				A2C4DEDE2BB6073600D12451 /* SignUpView.swift in Sources */,
 				A2C4DEED2BB6095C00D12451 /* UIExtension.swift in Sources */,
+				A2C4DF022BB6633600D12451 /* CartModel.swift in Sources */,
 				A2C4DEE32BB607D800D12451 /* Globs.swift in Sources */,
 				A2C4DEF12BB61B6E00D12451 /* WelcomeView.swift in Sources */,
 				A2C4DEE02BB6074600D12451 /* SignUpViewModel.swift in Sources */,
+				A2C4DEF82BB6321B00D12451 /* SearchView.swift in Sources */,
 				A2C4DED92BB604B800D12451 /* ShoppingApp.swift in Sources */,
+				A2C4DEF32BB6314E00D12451 /* HomeView.swift in Sources */,
+				A2C4DF042BB6639E00D12451 /* ProfileView.swift in Sources */,
 				A2C4DEEF2BB6174000D12451 /* UserModel.swift in Sources */,
 				A2C4DEE52BB6080100D12451 /* LineTextField.swift in Sources */,
 			);
@@ -698,6 +738,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2C4DEF42BB631C700D12451 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2C4DEF52BB6320000D12451 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2C4DEF42BB631C700D12451 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A26EFEF22BB00BDC00E8E749 /* Project object */;
 }
