@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+//common service call for SignIn and SignUp
 class ServiceCall {
     
     class func post(parameter: [String: Any], path: String, isToken: Bool = false, withSuccess: @escaping ((_ responseObj: Any?) ->()), failure: @escaping ((_ error: Error?) ->())) {

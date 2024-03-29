@@ -1,5 +1,6 @@
 import SwiftUI
 
+//font
 enum Gilroy: String {
     case regular = "Gilroy-Regular"
     case medium = "Gilroy-Medium"

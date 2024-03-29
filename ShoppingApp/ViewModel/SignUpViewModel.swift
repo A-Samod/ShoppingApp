@@ -21,10 +21,15 @@ class SignUpViewModel: ObservableObject {
     @Published var isUserLogin: Bool = false
     @Published var isUserSignUp: Bool = false
     
-    //MARK: ServiceCall
+    
+    func resetFields() {
+        username = ""
+        email = ""
+        password = ""
+    }
+    
+    //func for user SignIn
     func serviceCallLogin(){
-        
-        
         if(password.isEmpty) {
             self.errorMessage = "please enter valid password"
             self.showError = true
@@ -56,6 +61,7 @@ class SignUpViewModel: ObservableObject {
         
     }
     
+    //func for signUp
     func serviceCallSignUp(){
         
         if(username.isEmpty) {
@@ -77,9 +83,6 @@ class SignUpViewModel: ObservableObject {
             return
         }
         
-        
-        
-        
         ServiceCall.post(parameter: [ "username": username , "email": email, "password": password, "dervice_token":"" ], path: Globs.SV_SIGN_UP) { responseObj in
             if let response = responseObj as? [String: Any] {
                 print("response 2====>>>", response)
@@ -88,7 +91,7 @@ class SignUpViewModel: ObservableObject {
                     self.errorMessage = response["message"] as? String ?? "Success"
                     self.showError = true
                     
-                    self.isUserSignUp = true
+                    // self.isUserSignUp = true
                 }
                 else {
                     self.errorMessage = response["message"] as? String ?? "Fail"
