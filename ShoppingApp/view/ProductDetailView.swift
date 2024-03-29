@@ -105,9 +105,9 @@ struct ProductDetailView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
                                 Button(action: {}) {
-                                    Image(systemName: "arrow.left")
-                                        .foregroundColor(.blue)
-                                }
+            Image(systemName: "arrow.left")
+                .foregroundColor(.blue)
+        }
         )
         .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
     }
@@ -165,7 +165,7 @@ struct QuantityView: View {
             }
             .padding()
             .background(RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1))
+                .stroke(Color.gray, lineWidth: 1))
             
             Spacer()
         }

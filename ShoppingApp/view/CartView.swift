@@ -114,11 +114,11 @@ struct CartView: View {
     func calculateTotalPrice() {
         subTotal = cartItems.reduce(0.0) { $0 + $1.price * Double($1.quantity) }
         switch selectedPaymentOption {
-           case .cashOnDelivery:
-               deliveryFee = 600.0
-           case .cardPayment:
-               deliveryFee = 500.0
-           }
+        case .cashOnDelivery:
+            deliveryFee = 600.0
+        case .cardPayment:
+            deliveryFee = 500.0
+        }
         totalWithDelivery = subTotal + deliveryFee
     }
     
@@ -161,47 +161,7 @@ struct PaymentOptionPicker: View {
     }
 }
 
-//struct CartItemRow: View {
-//    let item: CartItem
-//    let onDelete: () -> Void
-//    
-//    var body: some View {
-//        HStack {
-//            AnimatedImage(url: URL(string: item.imageURL))
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 50, height: 60)
-//                .cornerRadius(8)
-//            
-//            VStack(alignment: .leading, spacing: 4) {
-//                Text(item.name)
-//                    .font(.headline)
-//                    .foregroundColor(.black)
-//                Text("Price: \(String(format: "%.2f", item.price))")
-//                    .foregroundColor(.gray)
-//                Text("Quantity: \(item.quantity)")
-//                    .foregroundColor(.gray)
-//                Text("Size: \(item.size)")
-//                    .foregroundColor(.gray)
-//            }
-//            
-//            Spacer()
-//            
-//            Button(action: {
-//                onDelete()
-//            }) {
-//                Image(systemName: "trash")
-//                    .foregroundColor(.red)
-//            }
-//            .padding(.trailing, 8)
-//        }
-//        .padding()
-//        .background(Color.white)
-//        .cornerRadius(10)
-//        .shadow(radius: 1)
-//        .padding(.vertical, 4)
-//    }
-//}
+
 
 struct CartItemRow: View {
     let item: CartItem
