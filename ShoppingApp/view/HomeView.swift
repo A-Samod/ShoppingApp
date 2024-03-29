@@ -6,19 +6,19 @@ struct HomeView: View {
         TabView {
             HomeViewBase()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label("", systemImage: "house.fill")
                 }
             SearchView(searchTerm: "")
                 .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
+                    Label("", systemImage: "magnifyingglass")
                 }
             CartView()
                 .tabItem {
-                    Label("Cart", systemImage: "cart")
+                    Label("", systemImage: "cart")
                 }
             ProfileView()
                 .tabItem {
-                    Label("Profile", systemImage: "person.circle.fill")
+                    Label("", systemImage: "person.circle.fill")
                 }
         }
         .navigationBarHidden(true)
@@ -32,22 +32,29 @@ struct HomeViewBase: View {
     var body: some View {
         ScrollView {
             VStack{
-                Image("banana")
+                Image("home_logo_cropped")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 60, height: 60)
-                Text("Welcome to orel !")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .padding()
-                
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             
+            Divider().padding(.horizontal)
+            
             VStack {
-                Text("Featured Products")
-                    .font(.headline)
-                    .padding(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(Color.black.opacity(1))
+                        .cornerRadius(10)
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 20)
+                    
+                    Text("Trending Now")
+                        .font(.custom("Arial", size: 18))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 15)
+                }
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 20) {
@@ -61,11 +68,23 @@ struct HomeViewBase: View {
                 .frame(height: 300)
                 
             }
+            
+            Divider().padding(.horizontal)
+
             VStack {
-                Text("latets Products")
-                    .font(.headline)
-                    .padding(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(Color.black.opacity(1))
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                    
+                    Text("Exclusive Collections")
+                        .font(.custom("Arial", size: 18))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 20)
+                }
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 20) {
@@ -99,8 +118,12 @@ struct ProductTileView: View {
                     .cornerRadius(10)
             }
             Text(product.name)
-                .font(.headline)
-            Text("$\(product.price)")
+               // .font(.headline)
+                .font(.custom("Arial", size: 15))
+                .fontWeight(.bold)
+                .padding(.vertical, 5)
+                .padding(.horizontal, 10)
+                Text("LKR \(product.price)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
         }
