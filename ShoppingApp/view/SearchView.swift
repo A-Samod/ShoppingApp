@@ -45,7 +45,7 @@ struct SearchView: View {
                     }
                     .background(Color.white.edgesIgnoringSafeArea(.all))
                 }
-                .navigationTitle("Find the best clothes")
+                .navigationTitle("Discover Your Style")
                 .searchable(text: $searchText, prompt: "Search Items")
             }
         }
