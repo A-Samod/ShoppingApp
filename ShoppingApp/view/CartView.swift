@@ -4,109 +4,114 @@ import SDWebImageSwiftUI
 struct CartView: View {
     @State var totalPrice = 0.00
     @State var subTotal = 0.0
-    @State var shipping = 0.0
-    @State var totalWithShipping = 0.0
-    
+    @State var deliveryFee = 0.0
+    @State var totalWithDelivery = 0.0
+    @State var selectedPaymentOption = PaymentOption.cashOnDelivery
     @State private var showAlert = false
-    @State private var navigateTohome = false
+    @State private var navigateToHome = false
+    @State private var navigateToLogin = false
     
     var body: some View {
         VStack {
-            Text("Your Cart")
+            Text("My Cart")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
+                .foregroundColor(.black)
             
             ScrollView {
                 ForEach(cartItems, id: \.cartId) { item in
-                    HStack {
-                        AnimatedImage(url: URL(string: item.imageURL))
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 60)
-                            .cornerRadius(8)
-                        
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text("Price: \(String(format: "%.2f", item.price))")
-                            Text("Quantity: \(item.quantity)")
-                            Text("Size: \(item.size)")
-                        }
-                        
-                        Spacer()
-                    }
-                    .padding()
-                    .background(Color(uiColor: .systemBackground))
-                    .cornerRadius(10)
-                    .shadow(radius: 1)
-                    .padding(.horizontal)
+                    CartItemRow(item: item, onDelete: {
+                        deleteCartItem(item)
+                    })
                 }
                 .onDelete(perform: deleteItem)
             }
             
-            Divider().padding(.horizontal)
+            Divider()
             
-            summaryView.padding(.horizontal)
+            VStack(alignment: .leading, spacing: 10) {
+                HStack {
+                    Text("Item Amount")
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("LKR \(String(format: "%.2f", subTotal))")
+                        .foregroundColor(.black)
+                }
+                
+                HStack {
+                    Text("Delivery Fee")
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("LKR \(String(format: "%.2f", deliveryFee))")
+                        .foregroundColor(.black)
+                }
+                
+                PaymentOptionPicker(selectedOption: $selectedPaymentOption)
+                
+                Divider()
+                
+                HStack {
+                    Text("Payment Option")
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text(selectedPaymentOption.rawValue)
+                        .foregroundColor(.black)
+                }
+                
+                Divider()
+                
+                HStack {
+                    Text("Total:")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("LKR \(String(format: "%.2f", totalWithDelivery))")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                }
+            }
+            .padding()
+            .background(Color.white)
+            .cornerRadius(10)
+            .shadow(radius: 1)
+            .padding(.vertical, 4)
             
             Spacer()
             
             Button(action: {
                 showAlert = true
-                self.navigateTohome = true
             }) {
                 Text("Checkout")
                     .fontWeight(.semibold)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 60)
+                    .background(Color.black)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
-                    .alert(isPresented: $showAlert) {
-                        Alert(title: Text("Success"), message: Text("Item added chckoutsuccessfully"), dismissButton: .default(Text("OK")))
-                    }
+                    .cornerRadius(20)
+                    .padding()
             }
             .padding(.bottom, 50)
+            .alert(isPresented: $showAlert) {
+                let message = "Items added to cart successfully. Thank you for your purchase!"
+                return Alert(title: Text("Success"), message: Text(message), dismissButton: .default(Text("OK"), action: {
+                    clearCartItems()
+                    navigateToHome = true
+                }))
+            }
+            .fullScreenCover(isPresented: $navigateToHome) {
+                HomeView()
+            }
         }
+        .padding(.horizontal)
         .onAppear(perform: calculateTotalPrice)
-        
-    }
-    
-    
-    var summaryView: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text("Subtotal:")
-                Spacer()
-                Text("LKR \(String(format: "%.2f", subTotal))")
-            }
-            
-            HStack {
-                Text("Shipping:")
-                Spacer()
-                Text("LKR \(String(format: "%.2f", shipping))")
-            }
-            
-            Divider()
-            
-            HStack {
-                Text("Total:")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-                Text("LKR \(String(format: "%.2f", totalWithShipping))")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.red)
-            }
-        }
     }
     
     func calculateTotalPrice() {
         subTotal = cartItems.reduce(0.0) { $0 + $1.price * Double($1.quantity) }
-        shipping = subTotal > 0 ? 300.0 : 0.0
-        totalWithShipping = subTotal + shipping
+        totalWithDelivery = subTotal + deliveryFee
     }
     
     func deleteItem(at offsets: IndexSet) {
@@ -114,9 +119,85 @@ struct CartView: View {
         calculateTotalPrice()
     }
     
+    func clearCartItems() {
+        cartItems.removeAll()
+    }
+    
+    func deleteCartItem(_ item: CartItem) {
+        if let index = cartItems.firstIndex(where: { $0.cartId == item.cartId }) {
+            cartItems.remove(at: index)
+            calculateTotalPrice()
+        }
+    }
 }
 
-#Preview {
-    CartView()
+struct PaymentOptionPicker: View {
+    @Binding var selectedOption: PaymentOption
+    
+    var body: some View {
+        HStack {
+            Text("Payment Option")
+                .foregroundColor(.black)
+            Spacer()
+            Picker("Payment Option", selection: $selectedOption) {
+                ForEach(PaymentOption.allCases, id: \.self) { option in
+                    Text(option.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+        }
+    }
 }
 
+struct CartItemRow: View {
+    let item: CartItem
+    let onDelete: () -> Void
+    
+    var body: some View {
+        HStack {
+            AnimatedImage(url: URL(string: item.imageURL))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 50, height: 60)
+                .cornerRadius(8)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(item.name)
+                    .font(.headline)
+                    .foregroundColor(.black)
+                Text("Price: \(String(format: "%.2f", item.price))")
+                    .foregroundColor(.gray)
+                Text("Quantity: \(item.quantity)")
+                    .foregroundColor(.gray)
+                Text("Size: \(item.size)")
+                    .foregroundColor(.gray)
+            }
+            
+            Spacer()
+            
+            Button(action: {
+                onDelete()
+            }) {
+                Image(systemName: "trash")
+                    .foregroundColor(.red)
+            }
+            .padding(.trailing, 8)
+        }
+        .padding()
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 1)
+        .padding(.vertical, 4)
+    }
+}
+
+enum PaymentOption: String, CaseIterable {
+    case cashOnDelivery = "COD"
+    case cardPayment = "Card"
+}
+
+struct CartView_Previews: PreviewProvider {
+    static var previews: some View {
+        CartView()
+    }
+}
