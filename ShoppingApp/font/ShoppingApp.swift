@@ -9,19 +9,10 @@ import SwiftUI
 
 @main
 struct ShoppingApp: App {
-    
-    @StateObject var mainVM = SignUpViewModel.shared
-    
-    var body: some Scene {
+ var body: some Scene {
         WindowGroup {
             NavigationView{
-                if mainVM.isUserLogin==true{
-                   HomeView()
-                }
-                else if mainVM.isUserLogin==false{
-                   WelcomeView()
-                }
-               // HomeView()
+                WelcomeView()
             }
         }
     }

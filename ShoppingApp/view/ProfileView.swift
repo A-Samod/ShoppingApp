@@ -8,16 +8,10 @@ struct ProfileView: View {
     @State private var confirmPassword = ""
     @State private var showAlert = false
     @State private var navigateToSignIn = false
+    @StateObject var loginVM = SignInViewModel.signIn;
     
     var body: some View {
         VStack {
-            
-//            Text("")
-//                .font(.largeTitle)
-//                .fontWeight(.bold)
-//                .padding()
-//                .foregroundColor(.black)
-            
             Spacer()
             
             Image(systemName: "person.circle.fill")
@@ -73,7 +67,10 @@ struct ProfileView: View {
             
             Button(action: {
                 showAlert = true
-               // SignInView()
+                // SignInView()
+                loginVM.isUserLogin = false
+                navigateToSignIn = true
+                
                 
             }) {
                 Text("Log Out")
@@ -83,29 +80,19 @@ struct ProfileView: View {
                     .background(Color.black)
                     .foregroundColor(.white)
                     .cornerRadius(20)
-                    //.padding(.bottom,1)
-                    .alert(isPresented: $showAlert) {
-                        Alert(title: Text("Success"), message: Text("Logged out successfully"), dismissButton: .default(Text("OK")){
-                            navigateToSignIn = true
-
-                        })
-                            }
             }
             .padding(.bottom, 50)
-            NavigationLink(destination: SignInView(), isActive: $navigateToSignIn) {
-                               EmptyView()
-                           }
-                           .hidden()
         }
         .padding()
-        //.navigationBarTitle("Profile")
+        .fullScreenCover(isPresented: $navigateToSignIn) {
+            SignInView()
+        }
     }
 }
 
-#if DEBUG
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
 }
-#endif
+

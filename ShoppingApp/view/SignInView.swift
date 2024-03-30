@@ -10,8 +10,8 @@ import SwiftUI
 struct SignInView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @StateObject var loginVM = SignUpViewModel.shared;
-    
+    @StateObject var loginVM = SignInViewModel.signIn;
+    @State private var showPassword = false
     
     var body: some View {
         ZStack {
@@ -20,12 +20,13 @@ struct SignInView: View {
                 .scaledToFill()
                 .frame(width: .screenWidth, height: .screenHeight)
             
-            
+            Image("home_logo_cropped")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top,-350)
             VStack{
-                Image("home_logo_cropped")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                
                 Text("Sign In")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -33,29 +34,67 @@ struct SignInView: View {
                 
                 Text("Enter your emails and password")
                     .font(.customfont(.semibold, fontSize: 16))
-                    .foregroundColor(.secondaryText)
+                    .foregroundColor(.gray)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, .screenWidth * 0.1)
                 
-                LineTextField( title: "Email", placholder: "Enter your email address", txt: $loginVM.email, keyboardType: .emailAddress)
-                    .padding(.bottom, .screenWidth * 0.07)
                 
-                LineSecureField( title: "Password", placholder: "Enter your password", txt: $loginVM.password, isShowPassword: $loginVM.isShowPassword)
-                    .padding(.bottom, .screenWidth * 0.02)
-                
+                VStack(spacing: 20) {
+                    TextField("Email", text: $loginVM.email)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(10)
+                        .frame(height: 50)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                    
+                    VStack {
+                        if showPassword {
+                            TextField("Password", text: $loginVM.password)
+                                .padding()
+                                .background(Color.gray.opacity(0.1))
+                                .cornerRadius(10)
+                                .frame(height: 50)
+                                .disableAutocorrection(true)
+                                .autocapitalization(.none)
+                        } else {
+                            SecureField("Password", text: $loginVM.password)
+                                .padding()
+                                .background(Color.gray.opacity(0.1))
+                                .cornerRadius(10)
+                                .frame(height: 50)
+                                .disableAutocorrection(true)
+                                .autocapitalization(.none)
+                        }
+                    }
+                    .overlay(
+                        Button(action: {
+                            showPassword.toggle()
+                        }) {
+                            Image(systemName: showPassword ? "eye.fill" : "eye.slash.fill")
+                                .foregroundColor(.gray)
+                        }
+                            .padding(.trailing, 10)
+                        , alignment: .trailing
+                    )
+                    .frame(height: 50)
+                    .padding(.bottom, 20)
+                }.fullScreenCover(isPresented: $loginVM.isUserLogin) {
+                    HomeView()
+                }
                 Button {
                     
                 } label: {
                     Text("Forgot Password?")
                         .font(.customfont(.medium, fontSize: 14))
-                        .foregroundColor(.primaryText)
+                        .foregroundColor(.black)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                 .padding(.bottom, .screenWidth * 0.03)
                 
                 RoundButton(title: "Log In") {
-                    print("This fn started ....!!!!")
                     loginVM.serviceCallLogin()
+                    //isLoggedIn = true
                 }
                 .padding(.bottom, .screenWidth * 0.05)
                 
@@ -65,7 +104,7 @@ struct SignInView: View {
                     HStack{
                         Text("Alredy have an account?")
                             .font(.customfont(.semibold, fontSize: 14))
-                            .foregroundColor(.primaryText)
+                            .foregroundColor(.black)
                         
                         Text("Signup")
                             .font(.customfont(.semibold, fontSize: 14))
@@ -75,12 +114,9 @@ struct SignInView: View {
                 
                 Spacer()
             }
-            .padding(.top, .topInsets + 64)
+            .padding(.top, 220)
             .padding(.horizontal, 20)
-            .padding(.bottom, .bottomInsets)
-            
-            
-            
+     
         }
         .alert(isPresented: $loginVM.showError) {
             Alert(title: Text(Globs.AppName), message: Text( loginVM.errorMessage ), dismissButton: .default(Text("Ok")))
@@ -92,6 +128,7 @@ struct SignInView: View {
         .ignoresSafeArea()
         
     }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
