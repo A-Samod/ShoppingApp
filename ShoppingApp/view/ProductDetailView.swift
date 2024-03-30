@@ -94,7 +94,7 @@ struct ProductDetailView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
                     .background(goTOCart ? Color.gray : Color.black)
-                    .cornerRadius(15)
+                    .cornerRadius(50)
             })
             .padding()
             .alert(isPresented: $showAlert) {

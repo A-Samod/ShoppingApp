@@ -23,7 +23,7 @@ struct RoundButton: View {
         }
         .frame( minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60 )
         .background(Color.black)
-        .cornerRadius(20)
+        .cornerRadius(50)
     }
 }
 

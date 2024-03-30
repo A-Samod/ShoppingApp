@@ -92,7 +92,7 @@ struct CartView: View {
                     .frame(height: 60)
                     .background(Color.black)
                     .foregroundColor(.white)
-                    .cornerRadius(20)
+                    .cornerRadius(50)
                     .padding()
             }
             .padding(.bottom, 50)

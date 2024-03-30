@@ -43,13 +43,14 @@ struct ProfileView: View {
                         newPassword = ""
                         confirmPassword = ""
                         isEditing = false
+                        ProfileView()
                     }) {
                         Text("Update Password")
                             .foregroundColor(.white)
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .cornerRadius(8)
+                            .background(Color.black)
+                            .cornerRadius(50)
                     }
                 }
                 .padding()
@@ -61,28 +62,29 @@ struct ProfileView: View {
                         .foregroundColor(.blue)
                         .padding()
                 }
+                Button(action: {
+                    showAlert = true
+                    // SignInView()
+                    loginVM.isUserLogin = false
+                    navigateToSignIn = true
+                    
+                    
+                }) {
+                    Text("Log Out")
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: 320)
+                        .frame(height: 60)
+                        .background(Color.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(50)
+                        .padding(.top, 200)
+                }
+                .padding(.bottom, 50)
+
             }
             
             Spacer()
-            
-            Button(action: {
-                showAlert = true
-                // SignInView()
-                loginVM.isUserLogin = false
-                navigateToSignIn = true
-                
-                
-            }) {
-                Text("Log Out")
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: 320)
-                    .frame(height: 60)
-                    .background(Color.black)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-            }
-            .padding(.bottom, 50)
-        }
+                    }
         .padding()
         .fullScreenCover(isPresented: $navigateToSignIn) {
             SignInView()
