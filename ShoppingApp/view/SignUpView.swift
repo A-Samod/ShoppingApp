@@ -10,8 +10,9 @@ import SwiftUI
 struct SignUpView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @StateObject var mainVM = SignUpViewModel.shared;
-    //@ObservedObject var mainVM: RegisterViewModel = RegisterViewModel()
+    @StateObject var mainVM = SignUpViewModel.signUp;
+    @State private var showPassword = false
+    @State private var showAlert = false
     
     var body: some View {
         ZStack{
@@ -26,24 +27,68 @@ struct SignUpView: View {
                     
                     Text("Enter your credentials to continue")
                         .font(.customfont(.semibold, fontSize: 16))
-                        .foregroundColor(.secondaryText)
+                        .foregroundColor(.gray)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.bottom, .screenWidth * 0.1)
                     
-                    
-                    LineTextField( title: "Username", placholder: "Enter your username", txt: $mainVM.username)
-                        .padding(.bottom, .screenWidth * 0.07)
-                    
-                    LineTextField( title: "Email", placholder: "Enter your email address", txt: $mainVM.email, keyboardType: .emailAddress)
-                        .padding(.bottom, .screenWidth * 0.07)
-                    
-                    LineSecureField( title: "Password", placholder: "Enter your password", txt: $mainVM.password, isShowPassword: $mainVM.isShowPassword)
-                        .padding(.bottom, .screenWidth * 0.04)
+                    VStack(spacing: 20) {
+                        
+                        TextField("Username", text: $mainVM.username)
+                            .padding()
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(10)
+                            .frame(height: 70)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                        
+                        TextField("Email", text: $mainVM.email)
+                            .padding()
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(10)
+                            .frame(height: 50)
+                            .keyboardType(.emailAddress)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                        
+                        VStack {
+                            if showPassword {
+                                TextField("Password", text: $mainVM.password)
+                                    .padding()
+                                    .background(Color.gray.opacity(0.1))
+                                    .cornerRadius(10)
+                                    .frame(height: 50)
+                                    .disableAutocorrection(true)
+                                    .autocapitalization(.none)
+                            } else {
+                                SecureField("Password", text: $mainVM.password)
+                                    .padding()
+                                    .background(Color.gray.opacity(0.1))
+                                    .cornerRadius(10)
+                                    .frame(height: 50)
+                                    .disableAutocorrection(true)
+                                    .autocapitalization(.none)
+                            }
+                        }
+                        .overlay(
+                            Button(action: {
+                                showPassword.toggle()
+                            }) {
+                                Image(systemName: showPassword ? "eye.fill" : "eye.slash.fill")
+                                    .foregroundColor(.gray)
+                            }
+                                .padding(.trailing, 10)
+                            , alignment: .trailing
+                        )
+                        .frame(height: 60)
+                        .padding(.bottom, 30)
+                    }.fullScreenCover(isPresented: $mainVM.isUserSignUp) {
+                        SignInView()
+                    }
                     
                     VStack {
                         Text("By continuing you agree to our")
                             .font(.customfont(.medium, fontSize: 14))
-                            .foregroundColor(.secondaryText)
+                            .foregroundColor(.gray)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         
                         HStack{
@@ -70,19 +115,15 @@ struct SignUpView: View {
                     
                     RoundButton(title: "Sign Up") {
                         mainVM.serviceCallSignUp()
-                        print("Clicked ..")
-//                        mainVM.resetFields()
                     }
                     .padding(.bottom, .screenWidth * 0.05)
-                    
-                    
                     NavigationLink {
                         SignInView()
                     } label: {
                         HStack{
                             Text("Alredy have an account?")
                                 .font(.customfont(.semibold, fontSize: 14))
-                                .foregroundColor(.primaryText)
+                                .foregroundColor(.black)
                             
                             Text("Sign In")
                                 .font(.customfont(.semibold, fontSize: 14))
@@ -92,9 +133,9 @@ struct SignUpView: View {
                     
                     Spacer()
                 }
-                .padding(.top,  .topInsets + 64)
+                .padding(.top, 140)
                 .padding(.horizontal, 20)
-                .padding(.bottom, .bottomInsets)
+                // .padding(.bottom, .bottomInsets)
             }
             
             
