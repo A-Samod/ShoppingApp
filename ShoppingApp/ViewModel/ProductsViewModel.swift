@@ -24,10 +24,8 @@ class ProductsViewModel: ObservableObject {
             }
             
             do {
-                print("productResponse +++>>>",  data)
                 let productResponse = try JSONDecoder().decode(ProductResponse.self, from: data)
                 
-                print("productResponse +++>>>",  productResponse)
                 DispatchQueue.main.async {
                     self.products = productResponse.data
                 }

@@ -20,7 +20,6 @@
 		A2C4DEDE2BB6073600D12451 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEDD2BB6073600D12451 /* SignUpView.swift */; };
 		A2C4DEE02BB6074600D12451 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEDF2BB6074600D12451 /* SignUpViewModel.swift */; };
 		A2C4DEE32BB607D800D12451 /* Globs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEE22BB607D800D12451 /* Globs.swift */; };
-		A2C4DEE52BB6080100D12451 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEE42BB6080100D12451 /* LineTextField.swift */; };
 		A2C4DEE72BB6080900D12451 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEE62BB6080900D12451 /* RoundButton.swift */; };
 		A2C4DEE92BB6082600D12451 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEE82BB6082600D12451 /* SignInView.swift */; };
 		A2C4DEEB2BB6083F00D12451 /* ServiceCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEEA2BB6083F00D12451 /* ServiceCall.swift */; };
@@ -36,6 +35,7 @@
 		A2C4DF002BB662E800D12451 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DEFF2BB662E800D12451 /* CartView.swift */; };
 		A2C4DF022BB6633600D12451 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DF012BB6633600D12451 /* CartModel.swift */; };
 		A2C4DF042BB6639E00D12451 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DF032BB6639E00D12451 /* ProfileView.swift */; };
+		A2C4DF062BB7CC2B00D12451 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C4DF052BB7CC2B00D12451 /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,6 @@
 		A2C4DEDD2BB6073600D12451 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A2C4DEDF2BB6074600D12451 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		A2C4DEE22BB607D800D12451 /* Globs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globs.swift; sourceTree = "<group>"; };
-		A2C4DEE42BB6080100D12451 /* LineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		A2C4DEE62BB6080900D12451 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		A2C4DEE82BB6082600D12451 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A2C4DEEA2BB6083F00D12451 /* ServiceCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceCall.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		A2C4DEFF2BB662E800D12451 /* CartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		A2C4DF012BB6633600D12451 /* CartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		A2C4DF032BB6639E00D12451 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A2C4DF052BB7CC2B00D12451 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +216,7 @@
 		A2C4DEDC2BB606FE00D12451 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A2C4DF052BB7CC2B00D12451 /* SignInViewModel.swift */,
 				A2C4DEDF2BB6074600D12451 /* SignUpViewModel.swift */,
 				A2C4DEF92BB6327800D12451 /* ProductsViewModel.swift */,
 			);
@@ -227,7 +228,6 @@
 			children = (
 				A2C4DEEC2BB6095C00D12451 /* UIExtension.swift */,
 				A2C4DEE62BB6080900D12451 /* RoundButton.swift */,
-				A2C4DEE42BB6080100D12451 /* LineTextField.swift */,
 				A2C4DEE22BB607D800D12451 /* Globs.swift */,
 				A2C4DEEA2BB6083F00D12451 /* ServiceCall.swift */,
 			);
@@ -378,6 +378,7 @@
 				A2C4DEFE2BB661DC00D12451 /* ProductDetailView.swift in Sources */,
 				A2C4DEEB2BB6083F00D12451 /* ServiceCall.swift in Sources */,
 				A2C4DF002BB662E800D12451 /* CartView.swift in Sources */,
+				A2C4DF062BB7CC2B00D12451 /* SignInViewModel.swift in Sources */,
 				A2C4DEFA2BB6327800D12451 /* ProductsViewModel.swift in Sources */,
 				A2C4DEE92BB6082600D12451 /* SignInView.swift in Sources */,
 				A2C4DEFC2BB6328F00D12451 /* ProductModel.swift in Sources */,
@@ -392,7 +393,6 @@
 				A2C4DEF32BB6314E00D12451 /* HomeView.swift in Sources */,
 				A2C4DF042BB6639E00D12451 /* ProfileView.swift in Sources */,
 				A2C4DEEF2BB6174000D12451 /* UserModel.swift in Sources */,
-				A2C4DEE52BB6080100D12451 /* LineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
