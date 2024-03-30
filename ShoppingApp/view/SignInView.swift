@@ -92,7 +92,7 @@ struct SignInView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                 .padding(.bottom, .screenWidth * 0.03)
                 
-                RoundButton(title: "Log In") {
+                RoundButton(title: "Login") {
                     loginVM.serviceCallLogin()
                     //isLoggedIn = true
                 }
@@ -102,7 +102,7 @@ struct SignInView: View {
                     SignUpView()
                 } label: {
                     HStack{
-                        Text("Alredy have an account?")
+                        Text("Don't have an account?")
                             .font(.customfont(.semibold, fontSize: 14))
                             .foregroundColor(.black)
                         
