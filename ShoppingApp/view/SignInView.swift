@@ -12,6 +12,7 @@ struct SignInView: View {
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var loginVM = SignInViewModel.signIn;
     @State private var showPassword = false
+    @State private var navigateToLogIn = false
     
     var body: some View {
         ZStack {
@@ -79,8 +80,6 @@ struct SignInView: View {
                     )
                     .frame(height: 50)
                     .padding(.bottom, 20)
-                }.fullScreenCover(isPresented: $loginVM.isUserLogin) {
-                    HomeView()
                 }
                 Button {
                     
@@ -94,10 +93,12 @@ struct SignInView: View {
                 
                 RoundButton(title: "Login") {
                     loginVM.serviceCallLogin()
-                    //isLoggedIn = true
+                    navigateToLogIn=true
+                }
+                .fullScreenCover(isPresented: $navigateToLogIn) {
+                    HomeView()
                 }
                 .padding(.bottom, .screenWidth * 0.05)
-                
                 NavigationLink {
                     SignUpView()
                 } label: {
@@ -133,10 +134,6 @@ struct SignInView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        NavigationView {
             SignInView()
-        }
-        
     }
 }

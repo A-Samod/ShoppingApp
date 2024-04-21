@@ -97,7 +97,7 @@ struct CartView: View {
             }
             .padding(.bottom, 50)
             .alert(isPresented: $showAlert) {
-                let message = "Items added to cart successfully. Thank you for your purchase!"
+                let message = "Thank you for your purchase!"
                 return Alert(title: Text("Success"), message: Text(message), dismissButton: .default(Text("OK"), action: {
                     clearCartItems()
                     navigateToHome = true

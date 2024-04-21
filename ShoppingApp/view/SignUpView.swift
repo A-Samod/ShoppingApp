@@ -81,8 +81,6 @@ struct SignUpView: View {
                         )
                         .frame(height: 60)
                         .padding(.bottom, 30)
-                    }.fullScreenCover(isPresented: $mainVM.isUserSignUp) {
-                        SignInView()
                     }
                     
                     VStack {
@@ -115,7 +113,9 @@ struct SignUpView: View {
                     
                     RoundButton(title: "Sign Up") {
                         mainVM.serviceCallSignUp()
-                    }
+                    }.fullScreenCover(isPresented: $mainVM.isUserSignUp) {
+                          SignInView()
+                        }
                     .padding(.bottom, .screenWidth * 0.05)
                     NavigationLink {
                         SignInView()
